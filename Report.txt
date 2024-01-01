@@ -1,0 +1,13 @@
+initializing react add 
+    - npx create-react-app moviez-gpt
+    - cd moviez-gpt
+    - npm start
+
+tailwind css configration 
+    - npm install -D tailwindcss
+    - npx tailwindcss init
+    - add    [ "./src/**/*.{js,jsx,ts,tsx}", ] in tailwind.config.js file in content:[]
+    - add [ @tailwind base;
+            @tailwind components;
+            @tailwind utilities;]
+        in index.css
