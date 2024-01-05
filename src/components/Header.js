@@ -5,13 +5,16 @@ import { useNavigate } from "react-router-dom";
 import { addUser, removeUser } from "../utils/userSlice";
 import { auth } from "../utils/firebase";
 import { LOGO } from "../utils/constants";
+import { toggleSearch } from "../utils/gptSlice";
 
 const Header = () => {
     const user = useSelector(store => store.user);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-
+    const showSearch = useSelector(store => store.gptSearch.showGptSearch);
+    const handleToggle = () => {
+        dispatch(toggleSearch());
+    }
     useEffect(() => {
         const unsubscrib = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -45,6 +48,7 @@ const Header = () => {
             </div>
             <div className="p-4 flex">
                 {user?.displayName && <h1 className="font-bold m-2 text-white">Hello, {user?.displayName}</h1>}
+                {user && <button className="bg-green-500 w-32 text-white rounded-lg p-auto" onClick={handleToggle}>{showSearch?"Home":"GPT Search"}</button>}
                 {user && <img className="w-8 mx-2" alt="profile logo" src={LOGO} />}
                 {user && <button onClick={handleLogout} className="font-bold text-white">LogOut</button>}
             </div>
