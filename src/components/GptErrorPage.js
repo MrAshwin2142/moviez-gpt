@@ -9,7 +9,7 @@ const GptErrorPage = () => {
     return ( 
         <div className=''>
             <div className='p-4 flex justify-center'>
-                <p className='text-white text-3xl w-6/12 text-center my-4'>
+                <p className='text-white md:text-3xl md:w-6/12 text-center my-4'>
                     Whoops! Seems like we've hit the movie-search limit! No worries, though. Take a peek at our <span className='text-red-900 font-bold'>"Top Rated Movies"</span> list for some awesome picks! Thanks for giving our app a try - you're awesome for loving movies as much as we do! 🎬✨
                 </p>
             </div>

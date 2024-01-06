@@ -42,14 +42,14 @@ const Header = () => {
     }
 
     return (
-        <div className="flex justify-between absolute z-10 w-full bg-gradient-to-b from-black">
-            <div>
-                <h1 className="text-red-600 font-bold text-5xl px-4 ">Moviez</h1>
+        <div className="md:flex bg-black  justify-between absolute z-10 w-full md:bg-gradient-to-b from-black">
+            <div className="text-center">
+                <h1 className="text-red-600 font-bold text-5xl px-4">Moviez</h1>
             </div>
-            <div className="p-4 flex">
+            <div className="p-4 flex justify-between">
                 {user?.displayName && <h1 className="font-bold m-2 text-white">Hello, {user?.displayName}</h1>}
                 {user && <button className="bg-green-500 w-32 text-white rounded-lg p-auto" onClick={handleToggle}>{showSearch?"Home":"GPT Search"}</button>}
-                {user && <img className="w-8 mx-2" alt="profile logo" src={LOGO} />}
+                {user && <img className="w-8 mx-2 hidden md:block" alt="profile logo" src={LOGO} />}
                 {user && <button onClick={handleLogout} className="font-bold text-white">LogOut</button>}
             </div>
         </div>
